@@ -48,6 +48,17 @@ class DrawerContent extends Component {
     NavigationActions.deviceInfo()
   }
 
+  handleViewBeers = () => {
+    this.toggleDrawer()
+    // NaviationActions.viewBeers()
+  }
+
+  handleBeaconScan = () => {
+    this.toggleDrawer()
+    NavigationActions.beaconScan()
+  }
+
+
   render () {
     return (
       <ScrollView style={styles.container}>
@@ -57,6 +68,8 @@ class DrawerContent extends Component {
         <DrawerButton text='API Testing' onPress={this.handlePressAPI} />
         <DrawerButton text='Themes' onPress={this.handlePressTheme} />
         <DrawerButton text='Device Info' onPress={this.handlePressDevice} />
+        <DrawerButton text='View My Beers' onPress={this.handleViewBeers} />
+        <DrawerButton text='Scan A Beer Beacon' onPress={this.handleBeaconScan} />
       </ScrollView>
     )
   }
