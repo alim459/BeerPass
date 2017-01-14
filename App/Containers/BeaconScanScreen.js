@@ -72,56 +72,26 @@ class BeaconScanScreen extends React.Component {
     )
   }
 
-  renderUsageExamples () {
-    const { loggedIn, temperature, city } = this.props
+  renderBeaconScan () {
     return (
       <View>
-        {this.renderHeader(I18n.t('loginLogoutExampleTitle'))}
-        {loggedIn ? this.renderLogoutButton() : this.renderLoginButton()}
-        {this.renderHeader('I18n Locale')}
-        <View style={styles.groupContainer}>
-          <Text style={styles.locale}>{I18n.locale}</Text>
-        </View>
-        {this.renderHeader(I18n.t('api') + `: ${city}`)}
-        <View style={[styles.groupContainer, {height: 50}]}>
-          <Text style={styles.temperature}>{temperature && `${temperature} ${I18n.t('tempIndicator')}`}</Text>
-        </View>
-        {this.renderHeader(I18n.t('rnVectorIcons'))}
-        <View style={styles.groupContainer}>
-          <TouchableOpacity onPress={this.handlePressRocket}>
-            <Icon name='rocket' size={Metrics.icons.medium} color={Colors.ember} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={this.handlePressSend}>
-            <Icon name='send' size={Metrics.icons.medium} color={Colors.error} />
-          </TouchableOpacity>
-          <TouchableOpacity onPress={this.handlePressStar}>
-            <Icon name='star' size={Metrics.icons.medium} color={Colors.snow} />
-          </TouchableOpacity>
-          <Icon name='trophy' size={Metrics.icons.medium} color={Colors.error} />
-          <Icon name='warning' size={Metrics.icons.medium} color={Colors.ember} />
-        </View>
-        <View style={styles.groupContainer}>
-          <Icon.Button name='facebook' style={styles.facebookButton} backgroundColor={Colors.facebook} onPress={() => window.alert('Facebook')}>
-            {I18n.t('loginWithFacebook')}
-          </Icon.Button>
-        </View>
-        {this.renderHeader(I18n.t('rnAnimatable'))}
-        <View style={styles.groupContainer}>
-          <Animatable.Text animation='fadeIn' iterationCount='infinite' direction='alternate' style={styles.subtitle}>{I18n.t('rnAnimatable')}</Animatable.Text>
-          <Animatable.Image animation='pulse' iterationCount='infinite' source={Images.logo} />
-          <Animatable.View animation='jello' iterationCount='infinite' >
-            <Icon name='cab' size={Metrics.icons.medium} color={Colors.snow} />
-          </Animatable.View>
-        </View>
-        {this.renderHeader(I18n.t('igniteGenerated'))}
-        <RoundedButton text='Listview' onPress={NavigationActions.listviewExample} />
-        <RoundedButton text='Listview Grid' onPress={NavigationActions.listviewGridExample} />
-        <RoundedButton text='Listview Sections' onPress={NavigationActions.listviewSectionsExample} />
-        <RoundedButton text='Listview Searching' onPress={NavigationActions.listviewSearchingExample} />
-        <RoundedButton text='Mapview' onPress={NavigationActions.mapviewExample} />
+        <RoundedButton text='TODO: implement beacon scan' onPress={this.scanForBeacons} />
       </View>
     )
   }
+
+  scanForBeacons () {
+      return (
+          <View>
+            <Text>
+                TODO: Scanning logic
+            </Text>
+          </View>
+      )
+  }
+
+
+
 
   render () {
     return (
@@ -130,11 +100,10 @@ class BeaconScanScreen extends React.Component {
         <ScrollView style={styles.container}>
           <View style={styles.section}>
             <Text style={styles.sectionText} >
-              The Usage Examples screen is a playground for 3rd party libs and logic proofs.
-              Items on this screen can be composed of multiple components working in concert.  Functionality demos of libs and practices
+              Yo Dawgs, the beacon scanning logic belongs in this file.
             </Text>
           </View>
-          {this.renderUsageExamples()}
+          {this.renderBeaconScan()}
         </ScrollView>
       </View>
     )
