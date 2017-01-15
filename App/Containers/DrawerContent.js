@@ -63,11 +63,17 @@ class DrawerContent extends Component {
     NavigationActions.login()
   }
 
+  handleViewBeerMenu = () => {
+    this.toggleDrawer()
+    NavigationActions.viewBeerMenu()
+  }
+
 
   render () {
     return (
       <ScrollView style={styles.container}>
         <Image source={Images.logo} style={styles.logo} />
+        <DrawerButton text='View Beer Menu' onPress={this.handleViewBeerMenu} />
         <DrawerButton text='View My Beers' onPress={this.handleViewBeers} />
         <DrawerButton text='Scan A Beer Beacon' onPress={this.handleBeaconScan} />
         <DrawerButton text='Account Info' onPress={this.handleAccountInfo} />

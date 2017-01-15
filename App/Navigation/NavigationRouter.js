@@ -21,6 +21,8 @@ import APITestingScreen from '../Containers/APITestingScreen'
 import ThemeScreen from '../Containers/ThemeScreen'
 import DeviceInfoScreen from '../Containers/DeviceInfoScreen'
 import BeaconScanScreen from '../Containers/BeaconScanScreen'
+import ViewMyBeersScreen from '../Containers/ViewMyBeersScreen'
+import ViewBeerMenuScreen from '../Containers/ViewBeerMenuScreen'
 
 /* **************************
 * Documentation: https://github.com/aksonov/react-native-router-flux
@@ -44,7 +46,8 @@ class NavigationRouter extends Component {
             <Scene key='apiTesting' component={APITestingScreen} title='API Testing' />
             <Scene key='theme' component={ThemeScreen} title='Theme' />
             <Scene key='beaconScan' component={BeaconScanScreen} title='Scan A Beer Beacon' />
-            <Scene key="viewMyBeers" component={ListviewGridExample} title='View My Beers' navBar={CustomNavBar}/>
+            <Scene key="viewMyBeers" component={ViewMyBeersScreen} title='View My Beers' navBar={CustomNavBar}/>
+            <Scene key="viewBeerMenu" component={ViewBeerMenuScreen} title='View Beer Menu' navBar={CustomNavBar}/>
 
             {/* Custom navigation bar example */}
             <Scene key='deviceInfo' component={DeviceInfoScreen} title='Device Info' />

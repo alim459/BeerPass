@@ -5,17 +5,29 @@ import Immutable from 'seamless-immutable'
 import { filter } from 'ramda'
 import { startsWith } from 'ramdasauce'
 
-const LIST_DATA = ['sausage', 'blubber', 'pencil', 'cloud', 'moon', 'water', 'computer', 'school',
-  'network', 'hammer', 'walking', 'violently', 'mediocre', 'literature', 'chair', 'two', 'window',
-  'cords', 'musical', 'zebra', 'xylophone', 'penguin', 'home', 'dog', 'final', 'ink', 'teacher', 'fun',
-  'website', 'banana', 'uncle', 'softly', 'mega', 'ten', 'awesome', 'attatch', 'blue', 'internet', 'bottle',
-  'tight', 'zone', 'tomato', 'prison', 'hydro', 'cleaning', 'telivision', 'send', 'frog', 'cup', 'book',
-  'zooming', 'falling', 'evily', 'gamer', 'lid', 'juice', 'moniter', 'captain', 'bonding', 'loudly', 'thudding',
-  'guitar', 'shaving', 'hair', 'soccer', 'water', 'racket', 'table', 'late', 'media', 'desktop', 'flipper',
-  'club', 'flying', 'smooth', 'monster', 'purple', 'guardian', 'bold', 'hyperlink', 'presentation', 'world', 'national',
-  'comment', 'element', 'magic', 'lion', 'sand', 'crust', 'toast', 'jam', 'hunter', 'forest', 'foraging',
-  'silently', 'tawesomated', 'joshing', 'pong', 'RANDOM', 'WORD'
-]
+const LIST_DATA = [
+  {
+    'name':'Gypsy Tears',
+    'brewery':'Parallel 49',
+    'rating':'4'
+  },
+  {
+    'name':'Sun God Wheat Ale',
+    'brewery':'R&B Brewing',
+    'rating':'4.5'
+  },
+  {
+    'name':'Passive Aggressive',
+    'brewery':'Brassneck',
+    'rating':'4'
+  },
+  {
+    'name':'Thunderbird Lager',
+    'brewery':'Molson Brewing',
+    'rating':'2'
+  }
+  ]
+
 
 /* ------------- Types and Action Creators ------------- */
 
@@ -38,7 +50,17 @@ export const INITIAL_STATE = Immutable({
 /* ------------- Reducers ------------- */
 
 export const performSearch = (state: Object, { searchTerm }: Object) => {
-  const results = filter(startsWith(searchTerm), LIST_DATA)
+  // const results = filter(startsWith(searchTerm), LIST_DATA)
+  console.log('performing serach')
+  var results = []
+  for (var beer in LIST_DATA) {
+    for (var key in beer) {
+      if (beer[key].startsWith(searchTerm)){
+        results.push(beer)
+      }
+    }
+  }
+  console.log('results are'  + JSON.stringify(results))
   return state.merge({ searching: true, searchTerm, results })
 }
 
