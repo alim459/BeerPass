@@ -25,7 +25,7 @@ import BeaconScanScreen from '../Containers/BeaconScanScreen'
 /* **************************
 * Documentation: https://github.com/aksonov/react-native-router-flux
 ***************************/
-
+ 
 class NavigationRouter extends Component {
   render () {
     return (
@@ -35,7 +35,7 @@ class NavigationRouter extends Component {
             <Scene initial key='presentationScreen' component={PresentationScreen} title='BeerPass' renderLeftButton={NavItems.hamburgerButton} />
             <Scene key='componentExamples' component={AllComponentsScreen} title='Components' />
             <Scene key='usageExamples' component={UsageExamplesScreen} title='Usage' rightTitle='Example' onRight={() => window.alert('Example Pressed')} />
-            <Scene key='login' component={LoginScreen} title='Login' hideNavBar />
+            <Scene key='login' component={LoginScreen} title='Login' renderLeftButton={NavItems.hamburgerButton} />
             <Scene key='listviewExample' component={ListviewExample} title='Listview Example' />
             <Scene key='listviewGridExample' component={ListviewGridExample} title='Listview Grid' />
             <Scene key='listviewSectionsExample' component={ListviewSectionsExample} title='Listview Sections' />
@@ -44,6 +44,7 @@ class NavigationRouter extends Component {
             <Scene key='apiTesting' component={APITestingScreen} title='API Testing' />
             <Scene key='theme' component={ThemeScreen} title='Theme' />
             <Scene key='beaconScan' component={BeaconScanScreen} title='Scan A Beer Beacon' />
+            <Scene key="viewMyBeers" component={ListviewGridExample} title='View My Beers' navBar={CustomNavBar}/>
 
             {/* Custom navigation bar example */}
             <Scene key='deviceInfo' component={DeviceInfoScreen} title='Device Info' />

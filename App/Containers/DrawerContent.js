@@ -50,7 +50,7 @@ class DrawerContent extends Component {
 
   handleViewBeers = () => {
     this.toggleDrawer()
-    // NaviationActions.viewBeers()
+    NavigationActions.viewMyBeers()
   }
 
   handleBeaconScan = () => {
